@@ -11,7 +11,7 @@ local Config = {
     Credit  = "made by Kysezz",
 
     -- Paste your key link between the quotes. Change it any time.
-    KeyLink = "https://www.roblox.rw/communities/178984439199/Stapian-Wrld",
+    KeyLink = "PASTE_YOUR_KEY_LINK_HERE",
 
     -- Option A: a single hardcoded key (leave "" to disable)
     Key = "PASTE_YOUR_KEY_HERE",
@@ -119,12 +119,11 @@ title.Size = UDim2.new(1, 0, 0, 34)
 title.Font = Enum.Font.GothamBold
 title.Text = Config.Title
 title.TextSize = 28
-title.TextColor3 = Config.Text
+title.TextColor3 = Color3.new(1, 1, 1)
 title.Parent = main
 local titleGrad = Instance.new("UIGradient")
 titleGrad.Color = ColorSequence.new(Config.Accent, Config.Accent2)
 titleGrad.Parent = title
-title.TextColor3 = Color3.new(1, 1, 1)
 
 -- Credit
 local credit = Instance.new("TextLabel")
@@ -192,10 +191,21 @@ local function makeButton(text, position, size, filled)
 
     if filled then
         btn.BackgroundColor3 = Color3.new(1, 1, 1)
+        btn.Text = ""
         local g = Instance.new("UIGradient")
         g.Color = ColorSequence.new(Config.Accent, Config.Accent2)
         g.Rotation = 20
         g.Parent = btn
+
+        -- separate label so the gradient doesn't tint the text
+        local lbl = Instance.new("TextLabel")
+        lbl.BackgroundTransparency = 1
+        lbl.Size = UDim2.new(1, 0, 1, 0)
+        lbl.Font = Enum.Font.GothamBold
+        lbl.Text = text
+        lbl.TextSize = 15
+        lbl.TextColor3 = Config.Text
+        lbl.Parent = btn
     else
         btn.BackgroundColor3 = Config.Panel
         stroke(btn, Config.Accent, 1.2, 0.4)
